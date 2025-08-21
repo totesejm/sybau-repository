@@ -1,0 +1,356 @@
+/* General Body and Background */
+body {
+    background-color: #0d1a2d; /* Dark blue background for consistency */
+    color: #e0f2f7; /* Light text color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('assets/images/background.png'); /* Name your background image file */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 80px; /* Space for fixed navbar */
+}
+
+/* Glass-morphic Navigation Bar */
+.glass-navbar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.26);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 0 6px 3px rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.glass-navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+    );
+}
+
+.glass-navbar .nav-link {
+    color: #e0f2f7 !important;
+    padding: 8px 20px;
+    margin: 0 5px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.glass-navbar .nav-link.active {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        inset 0 2px 4px rgba(0,0,0,0.1),
+        0 2px 4px rgba(0,0,0,0.1);
+}
+
+.glass-navbar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #92dff3 !important;
+}
+
+.glass-navbar .navbar-brand {
+    display: none;
+    color: #e0f2f7 !important;
+    font-weight: bold;
+    margin-right: 20px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Music Control */
+.music-control {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.26);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #e0f2f7;
+    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.music-control:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: #92dff3;
+}
+
+.music-control svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media (min-width: 768px) {
+    .glass-navbar .navbar-brand {
+        display: block;
+    }
+}
+
+/* Portfolio Section */
+.portfolio-section {
+    padding: 60px 0;
+    flex-grow: 1;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease;
+}
+
+.portfolio-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #b3e0ff;
+}
+
+.glass-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Glass Card Style */
+.glass-card {
+    width: 280px;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.1), inset 0 0 20px 10px rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(255, 255, 255, 0.2), inset 0 0 25px 12px rgba(255, 255, 255, 1);
+}
+
+.glass-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: border 0.3s ease;
+}
+
+.glass-card:hover img {
+    border: 1px solid rgba(130, 210, 255, 0.8);
+}
+
+.glass-card h4 {
+    color: #92dff3;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.glass-card p {
+    font-size: 0.9em;
+    color: #c9e9f2;
+    flex-grow: 1;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 60px 0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    color: #e0f2f7;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-card h2 {
+    margin-bottom: 30px;
+    color: #b3e0ff;
+}
+
+.form-label {
+    color: #c9e9f2;
+    text-align: left;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0f2f7;
+    margin-bottom: 20px;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #92dff3;
+    box-shadow: 0 0 0 0.25rem rgba(146, 223, 243, 0.25);
+    color: #e0f2f7;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Modal for Video Playback */
+.modal-content {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0f2f7;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-title {
+    color: #92dff3;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+.music-control {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.music-control svg {
+    width: 20px;
+    height: 20px;
+    stroke: #e0f2f7;
+}
+
+.music-control:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Add this for the background color transitions */
+.portfolio-section {
+    transition: background-color 0.5s ease;
+}
+
+/* Add these for the specific project colors */
+.project-endless-devotion {
+    background-color: #bd0000 !important;
+}
+
+.project-marc-x-monica {
+    background-color: #00bfff !important;
+}
+
+.project-endless-impact {
+    background-color: #0d0907 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .glass-card {
+        width: 90%;
+        margin: auto;
+    }
+    
+    .contact-card {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .glass-navbar {
+        padding: 8px 15px;
+    }
+    
+    .glass-navbar .nav-link {
+        padding: 6px 15px;
+        font-size: 0.9em;
+    }
+}
